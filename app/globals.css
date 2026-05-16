@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background: #07110f;
+    color: #f5efe2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  body {
+    font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system,
+      "Segoe UI", Roboto, sans-serif;
+  }
+
+  ::selection {
+    background: rgba(214, 185, 140, 0.25);
+    color: #f5efe2;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(245, 239, 226, 0.08);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 239, 226, 0.16);
+  }
+
+  /* Numbers default to tabular figures */
+  .tnum,
+  td,
+  .data-num {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hairline {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(245, 239, 226, 0.18),
+      transparent
+    );
+    height: 1px;
+  }
+
+  .bg-page-gradient {
+    background:
+      radial-gradient(70% 50% at 50% -10%, rgba(134, 185, 157, 0.10) 0%, rgba(7, 17, 15, 0) 60%),
+      radial-gradient(50% 40% at 80% 10%, rgba(214, 185, 140, 0.07) 0%, rgba(7, 17, 15, 0) 60%),
+      #07110f;
+  }
+
+  .surface-card {
+    background: linear-gradient(180deg, rgba(245, 239, 226, 0.02), rgba(245, 239, 226, 0)) ,
+      #101b18;
+    border: 1px solid rgba(245, 239, 226, 0.07);
+    border-radius: 1rem;
+  }
+
+  .surface-elevated {
+    background:
+      linear-gradient(180deg, rgba(245, 239, 226, 0.03), rgba(245, 239, 226, 0)),
+      #16231f;
+    border: 1px solid rgba(245, 239, 226, 0.08);
+    border-radius: 1rem;
+  }
+
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-sand/40 focus-visible:ring-offset-0;
+  }
+}
